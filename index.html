@@ -15,6 +15,10 @@
     <!-- Canvas Confetti Library for Gamification Celebrations -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
+    <!-- Firebase App and Realtime Database Compat SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -111,27 +115,45 @@
         <div class="absolute -right-10 -top-10 w-60 h-60 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <!-- Branding & Title -->
+                <!-- Branding & Title with Prominent College Name at Top Left -->
                 <div class="text-center md:text-left">
-                    <div class="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 text-jce-gold border border-white/20">
+                    <div class="mb-4">
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black font-display tracking-tight text-white uppercase drop-shadow-md">
+                            Jain College of Engineering, Belagavi
+                        </h2>
+                        <p class="text-xs sm:text-sm text-jce-gold font-bold tracking-wider mt-0.5">
+                            Approved by AICTE, New Delhi & Affiliated to VTU, Belagavi
+                        </p>
+                        <p class="text-xs sm:text-sm text-amber-300 font-semibold tracking-wide mt-0.5">
+                            Accredited by NBA (Dept. of CVE, CSE, ECE and EEE)
+                        </p>
+                    </div>
+
+                    <div class="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-2 text-jce-gold border border-white/20">
                         <i class="fa-solid fa-graduation-cap"></i> Student Orientation Program 2026
                     </div>
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight tracking-tight text-white">
+                    <h1 class="text-2xl sm:text-3xl font-extrabold font-display leading-tight text-slate-100">
                         Welcome to Your <span class="text-amber-400">Engineering Journey</span>
                     </h1>
-                    <p class="text-slate-200 text-sm sm:text-base mt-2 max-w-2xl font-light">
-                        Jain College of Engineering, Belagavi — Empowering future innovators through 10 transformative days of interactive learning, keynotes, and campus games.
+                    <p class="text-slate-200 text-xs sm:text-sm mt-2 max-w-2xl font-light">
+                        Empowering future innovators through 10 transformative days of interactive learning, keynotes, virtual labs, and campus games.
                     </p>
                 </div>
 
-                <!-- Coordinator Contact Quick Badge -->
+                <!-- Coordinator & Co-coordinator Contact Quick Badge -->
                 <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl flex flex-col items-center md:items-end text-center md:text-right min-w-[260px]">
                     <span class="text-xs uppercase text-slate-300 font-medium">Program Coordinator</span>
                     <span class="font-bold text-white text-base">Dr. Shivkumar Math</span>
                     <span class="text-xs text-amber-300 font-semibold">HOD - Physics, JCE Belagavi</span>
-                    <div class="mt-2 flex gap-2">
+                    <div class="mt-1 flex gap-2">
                         <a href="mailto:shivuphy@jainbgm.in" class="text-xs bg-white/20 hover:bg-white/30 text-white px-2.5 py-1 rounded-lg transition"><i class="fa-solid fa-envelope mr-1"></i> Email</a>
                         <a href="tel:9964515505" class="text-xs bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-2.5 py-1 rounded-lg transition"><i class="fa-solid fa-phone mr-1"></i> 9964515505</a>
+                    </div>
+
+                    <div class="mt-3 pt-2 border-t border-white/20 w-full flex flex-col items-center md:items-end">
+                        <span class="text-xs uppercase text-slate-300 font-medium">Program Co-coordinator</span>
+                        <span class="font-bold text-white text-sm">Prof. Pooja M Jarali</span>
+                        <span class="text-xs text-amber-300 font-semibold">Mathematics, JCE Belagavi</span>
                     </div>
                 </div>
             </div>
@@ -175,7 +197,7 @@
                     <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">Live Orientation Schedule</span>
                     <h2 class="text-2xl font-bold font-display text-slate-900">Interactive 10-Day Session Roadmap</h2>
                     <p class="text-slate-600 text-sm max-w-2xl">
-                        Sessions are conducted daily online via Google Meet. Click on <strong>"Join Live Meet"</strong> at the scheduled session time or access session recordings below.
+                        Sessions are conducted daily online via Google Meet. Click on <strong>"Join Live Meet"</strong> or access assigned course material links for each session below.
                     </p>
                 </div>
                 <div class="flex items-center gap-3">
@@ -234,7 +256,7 @@
                         <select id="student-branch" onchange="saveStudentProfile()" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-jce-blue focus:outline-none bg-white">
                             <option value="">Select Department</option>
                             <option value="Computer Science (CSE)">Computer Science (CSE)</option>
-                            <option value="Artificial Intelligence Machine Learning (AIML)">Artificial Intelligence Machine Learning (AIML)</option>
+                            <option value="Artificial Intelligence & Machine Learning (AI&ML)">Artificial Intelligence & Machine Learning (AI&ML)</option>
                             <option value="Electronics & Comm. (ECE)">Electronics & Comm. (ECE)</option>
                             <option value="Electrical & Electronics (EEE)">Electrical & Electronics (EEE)</option>
                             <option value="Mechanical Engg. (ME)">Mechanical Engg. (ME)</option>
@@ -436,7 +458,7 @@
                         <select id="leaderboard-branch-filter" onchange="renderLeaderboard()" class="px-3.5 py-2 border border-slate-300 rounded-xl text-xs font-semibold text-slate-700 bg-white focus:outline-none">
                             <option value="ALL">All Departments</option>
                             <option value="Computer Science (CSE)">CSE</option>
-                            <option value="Artificial Intelligence Machine Learning (AIML)">AIML</option>
+                            <option value="Artificial Intelligence & Machine Learning (AI&ML)">AIML</option>
                             <option value="Electronics & Comm. (ECE)">ECE</option>
                             <option value="Electrical & Electronics (EEE)">EEE</option>
                             <option value="Mechanical Engg. (ME)">ME</option>
@@ -519,7 +541,7 @@
                     </div>
                     <div>
                         <h3 class="text-lg font-bold font-display">Coordinator Admin Dashboard</h3>
-                        <p class="text-xs text-slate-300">Dr. Shivkumar Math — Session Management Suite</p>
+                        <p class="text-xs text-slate-300">Dr. Shivkumar Math — Session & Course URL Suite</p>
                     </div>
                 </div>
                 <button onclick="closeAdminModal()" class="text-slate-300 hover:text-white text-lg">
@@ -533,7 +555,7 @@
                     <i class="fa-solid fa-lock"></i>
                 </div>
                 <h4 class="text-xl font-bold text-slate-900">Protected Area</h4>
-                <p class="text-xs text-slate-500">Please enter the coordinator access password to edit session details, Meet links, resource person photos, or clear submissions.</p>
+                <p class="text-xs text-slate-500">Please enter the coordinator access password to edit session details, Meet links, Online Course URLs, or passport photos.</p>
                 <div class="space-y-3">
                     <input type="password" id="admin-password-input" placeholder="Enter Passcode" class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-xs text-center focus:ring-2 focus:ring-jce-blue focus:outline-none font-bold">
                     <button onclick="authenticateAdmin()" class="w-full py-2.5 bg-jce-blue hover:bg-blue-800 text-white font-bold rounded-xl text-xs transition">
@@ -547,7 +569,7 @@
             <div id="admin-panel-content" class="hidden p-6 space-y-6">
                 <div class="bg-amber-50 border border-amber-200 p-4 rounded-2xl text-xs text-amber-900 space-y-1">
                     <p class="font-bold flex items-center gap-2"><i class="fa-solid fa-circle-info"></i> Option 1: Passport Photo Upload & Single-File Export Instructions:</p>
-                    <p>• <strong>Upload Passport Photo:</strong> Click <strong class="bg-blue-100 text-jce-blue px-1 rounded"><i class="fa-solid fa-upload"></i> Upload</strong> to select a photo from your computer. It converts automatically into a Base64 text URI so it stays permanently inside your single HTML file!</p>
+                    <p>• <strong>Upload Passport Photo:</strong> Click <strong class="bg-blue-100 text-jce-blue px-1 rounded"><i class="fa-solid fa-upload"></i> Upload</strong> to select a photo from your computer. It converts automatically into Base64 so it stays permanently inside your single HTML file!</p>
                     <p>• <strong>Edit Day & Date:</strong> Modify Day #, Day of Week, and Date via dedicated inputs on each session card.</p>
                     <p>• <strong>Glow Override:</strong> Click <strong class="bg-amber-200 text-amber-900 px-1 rounded"><i class="fa-solid fa-sun"></i> Set as Today's Glow</strong> to force live golden highlight on any card.</p>
                     <p>• <strong>Split Sessions:</strong> Click <strong class="bg-amber-200 text-amber-900 px-1 rounded">Split (45m + 45m)</strong> to divide a 90-minute session into two 45-minute sub-sessions.</p>
@@ -612,6 +634,28 @@
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none"></div>
 
     <script>
+        // FIREBASE INITIALIZATION FOR REAL-TIME LEADERBOARD SYNCHRONIZATION
+        // Replace with your actual Firebase Project Configuration credentials
+        const firebaseConfig = {
+            apiKey: "AIzaSyAZ3Kto8VlVYfpKyWDmUHKZwJm5O3TP_aQ",
+            authDomain: "jce-orientation-2026.firebaseapp.com",
+            databaseURL: "https://jce-orientation-2026-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "jce-orientation-2026",
+            storageBucket: "jce-orientation-2026.firebasestorage.app",
+            messagingSenderId: "624675313796",
+            appId: "1:624675313796:web:aaffa6fda0780bfdac4ad1",
+  measurementId: "G-HDVW8V6YJZ"
+
+        };
+
+        // Initialize Firebase
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+        const db = firebase.database();
+        const leaderboardRef = db.ref('leaderboard');
+
+        // Schedule Dataset
         const defaultSchedule = [
             {
                 "dayNum": 1,
@@ -622,8 +666,9 @@
                 "topic": "Welcome to Engineering Excellence : Orientation Inauguration and Academic Vision — Part I",
                 "speaker": "Dr. J. Shivakumar, Principal & Director, JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator. (First 45-min segment)",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Inaugural session introducing VTU regulations, academic curriculum, and institutional vision.",
+                "meetLink": "https://meet.google.com/vgp-yrzy-ysd",
                 "videoLink": ""
             },
             {
@@ -635,8 +680,9 @@
                 "topic": "Engineering College Culture",
                 "speaker": "Dr. Rajashekargouda C. Patil, Dean Academics, JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator. (Second 45-min segment)",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Overview of engineering disciplines, academic guidelines, and campus culture.",
+                "meetLink": "https://meet.google.com/vgp-yrzy-ysd",
                 "videoLink": ""
             },
             {
@@ -648,8 +694,9 @@
                 "topic": "Student Engagement Cell at JCE :The Spectrum Council",
                 "speaker": "Dr. Varsha Gokak, Asst. Professor, Civil Engg., JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "A broad range of activities built on structural order and student empowerment.",
+                "meetLink": "https://meet.google.com/wcp-wtqu-hnz",
                 "videoLink": ""
             },
             {
@@ -661,8 +708,9 @@
                 "topic": "Energy Literacy Cell: Fueling Awareness, Saving Nature",
                 "speaker": "Prof. Yogish Chavadi, Asst. Prof. EEE Dept. JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Promoting clean energy awareness, sustainability, and ecological conservation.",
+                "meetLink": "https://meet.google.com/eev-vkqh-kaz",
                 "videoLink": ""
             },
             {
@@ -672,10 +720,11 @@
                 "week": "week1",
                 "timeSlot": "10:30 AM - 11:30 AM",
                 "topic": "Yuva AI for All: Ethical AI use for study, work, and everyday life",
-                "speaker": "Dr. Shivkumar Math, Professor & HOD, Physics, JCE-Belagavi",
+                "speaker": "Dr. Shrivatsa D Perur, Assoc. Professor, CSE, JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Learn fundamentals of artificial intelligence, practical productivity tools, and ethical AI usage.",
+                "meetLink": "https://meet.google.com/gcm-uhyt-aiw",
                 "videoLink": ""
             },
             {
@@ -687,8 +736,9 @@
                 "topic": "NISM:Financial literacy Course for Bharat",
                 "speaker": "Dr. S.RohitRaj Professor & HOD, MBA-Dept, JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Equips learners with essential financial knowledge, budgeting, and investment literacy.",
+                "meetLink": "https://meet.google.com/wtr-jkim-gmk",
                 "videoLink": ""
             },
             {
@@ -697,11 +747,12 @@
                 "dateStr": "Aug 10, 2026",
                 "week": "week2",
                 "timeSlot": "10:30 AM - 11:30 AM",
-                "topic": "Know Your Department: Computer Science Engineering (CSE)",
+                "topic": "Know Your Department: Computer Science & Engineering (CSE)",
                 "speaker": "Dr. Uttam Patil, Professor & HOD - Computer Science Engg. JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Department orientation covering algorithms, software development labs, and computing career paths.",
+                "meetLink": "https://meet.google.com/odq-fawj-cse",
                 "videoLink": ""
             },
             {
@@ -710,11 +761,12 @@
                 "dateStr": "Aug 10, 2026",
                 "week": "week2",
                 "timeSlot": "10:30 AM - 11:30 AM",
-                "topic": "Know Your Department: Artificial Intelligence & Machine Learning (AIML)",
+                "topic": "Know Your Department: Artificial Intelligence & Machine Learning (AI&ML)",
                 "speaker": "Dr. Sachinkumar. Professor & HOD, AIML, JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Insights into AI models, neural networks, machine learning algorithms, and intelligent systems.",
+                "meetLink": "https://meet.google.com/guo-hdfy-fjo",
                 "videoLink": ""
             },
             {
@@ -726,8 +778,9 @@
                 "topic": "Know Your Department: Electronics & Communication Engineering (ECE)",
                 "speaker": "Dr. Vinayakumar R. Bagali. Professor & HOD, ECE, JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Introduction to signal processing, semiconductor circuits, wireless systems, and IoT hardware.",
+                "meetLink": "https://meet.google.com/ntn-rpxq-fqm",
                 "videoLink": ""
             },
             {
@@ -736,11 +789,12 @@
                 "dateStr": "Aug 10, 2026",
                 "week": "week2",
                 "timeSlot": "10:45 AM - 11:30 AM",
-                "topic": "Know Your Department: Electronics & Electrical Engineering (EEE)",
+                "topic": "Know Your Department: Electrical & Electronics Engineering (EEE)",
                 "speaker": "Dr. Mallikarjuna G. D., Associate Professor & HOD, EEE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Understanding power systems, renewable energy grids, electric vehicles, and circuit automation.",
+                "meetLink": "https://meet.google.com/hzq-wbus-duk",
                 "videoLink": ""
             },
             {
@@ -752,8 +806,9 @@
                 "topic": "Know Your Department: Civil Engineering",
                 "speaker": "Dr. Mithun B.M. Professor & HOD, Civil Engg, JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Structural engineering fundamentals, sustainable infrastructure, surveying, and smart city architecture.",
+                "meetLink": "https://meet.google.com/aiy-fbjq-psd",
                 "videoLink": ""
             },
             {
@@ -765,8 +820,9 @@
                 "topic": "Know Your Department: Mechanical Engineering",
                 "speaker": "Dr. B. V. Hubballi Professor & HOD, Mech, JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "3D CAD modeling, robotics, thermodynamics, manufacturing technologies, and mechanical systems.",
+                "meetLink": "https://meet.google.com/wgb-vskn-deq",
                 "videoLink": ""
             },
             {
@@ -775,11 +831,12 @@
                 "dateStr": "Aug 11, 2026",
                 "week": "week2",
                 "timeSlot": "10:30 AM - 11:30 AM",
-                "topic": "UHV Session: self-exploration, ethical human conduct, and harmony at all levels of life",
+                "topic": "Universal Human Values (UHV)",
                 "speaker": "Dr. Jayashri Rudagi Professor, ECE, UHV-Coordinator, JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Right understanding, ensuring harmony at all levels of living, and balancing technical skills with moral responsibility.",
+                "meetLink": "https://meet.google.com/fjz-nxwj-ums",
                 "videoLink": ""
             },
             {
@@ -791,8 +848,9 @@
                 "topic": "Skill Development & Internship Cell: Bridge to Brilliance [Play with Skills. Test with Internships.]",
                 "speaker": "Dr. Ratan Patil, Dean, Skill Development & Internship Cell, JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Hands-on skill building programs, industry certifications, and corporate internship opportunities.",
+                "meetLink": "https://meet.google.com/sxc-hgfy-dwi",
                 "videoLink": ""
             },
             {
@@ -804,8 +862,9 @@
                 "topic": "Training & Placement at JCE",
                 "speaker": "Prof. Raghunandan Oza Assistant Professor, CSE, JCE-Belagavi",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Campus recruitment drives, career readiness, interview preparation, and placement statistics.",
+                "meetLink": "https://meet.google.com/jic-muyz-opw",
                 "videoLink": ""
             },
             {
@@ -817,8 +876,9 @@
                 "topic": "Academic Roadmap for Semester 1 & Path Ahead",
                 "speaker": "Dr. Prashant Patil, Dr. Shivkumar Math, and Dr. Manuprasad B. K.",
                 "photoUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "courseUrl": "",
+                "description": "Guidance on VTU examinations, grading systems, attendance requirements, and valedictory closing.",
+                "meetLink": "https://meet.google.com/eha-pwgk-gzx",
                 "videoLink": ""
             }
         ];
@@ -1126,7 +1186,6 @@
         // Global key sequence listener for typing "9999"
         let secretBuffer = '';
         window.addEventListener('keydown', (e) => {
-            // Do not capture keypresses when typing inside input fields or textareas
             if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) return;
 
             secretBuffer += e.key;
@@ -1173,11 +1232,7 @@
             localStorage.removeItem('jce_sessions_2026');
             sessions = defaultSchedule;
 
-            const savedLeaderboard = localStorage.getItem('jce_leaderboard_2026');
-            if (savedLeaderboard) {
-                try { leaderboard = JSON.parse(savedLeaderboard); } catch(e) { leaderboard = []; }
-            }
-
+            // Load student profile locally so they don't have to re-enter details
             const savedProfile = localStorage.getItem('jce_student_profile');
             if (savedProfile) {
                 try {
@@ -1188,11 +1243,23 @@
                 } catch(e) {}
             }
 
+            // REAL-TIME LISTENER: Fires whenever ANY student submits or updates a score
+            leaderboardRef.on('value', (snapshot) => {
+                const data = snapshot.val();
+                leaderboard = [];
+                if (data) {
+                    Object.values(data).forEach(item => {
+                        leaderboard.push(item);
+                    });
+                    leaderboard.sort((a, b) => b.totalScore - a.totalScore);
+                }
+                renderLeaderboard();
+            });
+
             renderSchedule();
             renderEmojiPuzzles();
             renderDaySelectorButtons();
             selectActivityDay(1);
-            renderLeaderboard();
             renderVideoGallery();
         }
 
@@ -1252,6 +1319,12 @@
                     </button>
                 ` : '';
 
+                const courseBtn = session.courseUrl ? `
+                    <a href="${session.courseUrl}" target="_blank" class="px-3.5 py-1.5 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border border-teal-200 shadow-sm">
+                        <i class="fa-solid fa-graduation-cap text-teal-600"></i> Course Material / Virtual Lab
+                    </a>
+                ` : '';
+
                 const photoBadge = session.photoUrl 
                     ? `<img src="${session.photoUrl}" alt="${session.speaker}" class="w-12 h-14 rounded-xl object-cover object-center border-2 border-jce-blue/30 shadow-md flex-shrink-0 bg-slate-100" style="image-rendering: -webkit-optimize-contrast;">`
                     : `<div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-sm"><i class="fa-solid fa-user-tie text-base text-jce-blue"></i></div>`;
@@ -1285,10 +1358,13 @@
                         </div>
                     </div>
 
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-                        <a href="${session.meetLink}" target="_blank" class="px-4 py-2 bg-jce-blue hover:bg-blue-800 text-white font-bold rounded-xl text-xs transition flex items-center gap-2 shadow-sm pulse-subtle">
-                            <i class="fa-solid fa-video"></i> Join Live Google Meet
-                        </a>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <a href="${session.meetLink}" target="_blank" class="px-4 py-2 bg-jce-blue hover:bg-blue-800 text-white font-bold rounded-xl text-xs transition flex items-center gap-2 shadow-sm pulse-subtle">
+                                <i class="fa-solid fa-video"></i> Join Live Google Meet
+                            </a>
+                            ${courseBtn}
+                        </div>
                         ${videoBtn}
                     </div>
                 `;
@@ -1381,6 +1457,7 @@
             }
         }
 
+        // REAL-TIME CLOUD SCORE RECORDING VIA FIREBASE
         function recordScore(activityName, score, maxScore) {
             if (!activeStudent.scores) activeStudent.scores = {};
             activeStudent.scores[activityName] = score;
@@ -1388,7 +1465,10 @@
             const totalScore = Object.values(activeStudent.scores).reduce((a, b) => a + b, 0);
             const activitiesCount = Object.keys(activeStudent.scores).length;
 
-            const existingIndex = leaderboard.findIndex(item => item.name.toLowerCase() === activeStudent.name.toLowerCase() && item.branch === activeStudent.branch);
+            const studentKey = (activeStudent.name + '_' + activeStudent.branch)
+                .replace(/[^a-zA-Z0-9]/g, '_')
+                .toLowerCase();
+
             const entry = {
                 name: activeStudent.name,
                 branch: activeStudent.branch,
@@ -1399,15 +1479,14 @@
                 timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
             };
 
-            if (existingIndex >= 0) {
-                leaderboard[existingIndex] = entry;
-            } else {
-                leaderboard.push(entry);
-            }
-
-            leaderboard.sort((a, b) => b.totalScore - a.totalScore);
-            localStorage.setItem('jce_leaderboard_2026', JSON.stringify(leaderboard));
-            renderLeaderboard();
+            // Push update to Firebase Cloud Database
+            db.ref('leaderboard/' + studentKey).set(entry)
+                .then(() => {
+                    showNotification(`Score synced live across all devices! (+${score} pts)`, 'success');
+                })
+                .catch((err) => {
+                    console.error("Firebase sync error:", err);
+                });
         }
 
         function renderCrosswordBoard() {
@@ -1502,8 +1581,6 @@
             if (typeof confetti === 'function' && score > 0) {
                 confetti({ particleCount: 70, spread: 50 });
             }
-
-            showNotification(`Day ${currentActivityDay} Crossword Complete! Score: ${score} / 50 pts (${correctCells}/${totalCells} letters correct).`, 'success');
         }
 
         function renderPhysicsActivity() {
@@ -1702,7 +1779,6 @@
             if (q3Val === pData.q3Correct) score += 15;
 
             recordScore(`Physics Day ${currentActivityDay}`, score, 50);
-            showNotification(`Physics Day ${currentActivityDay} Complete! Scored ${score}/50 points.`, 'success');
         }
 
         function renderMathActivity() {
@@ -1746,7 +1822,6 @@
             recordScore(`Math Day ${currentActivityDay}`, score, 50);
 
             if (typeof confetti === 'function' && score > 0) confetti({ particleCount: 60 });
-            showNotification(`Math Quest Day ${currentActivityDay} Complete! Scored ${score}/50 points.`, 'success');
         }
 
         function renderChemistryQuiz() {
@@ -1791,7 +1866,6 @@
             recordScore(`Chemistry Day ${currentActivityDay}`, points, 50);
 
             if (typeof confetti === 'function' && points > 0) confetti({ particleCount: 60 });
-            showNotification(`Chemistry Quest Day ${currentActivityDay} Complete! Solved ${correctCount}/${cData.length} (${points}/50 pts).`, 'success');
         }
 
         function renderEmojiPuzzles() {
@@ -1830,8 +1904,6 @@
             if (typeof confetti === 'function' && pointsEarned > 0) {
                 confetti({ particleCount: 80, spread: 60, origin: { y: 0.7 } });
             }
-
-            showNotification(`Emoji-neering Complete! Solved ${correctCount}/10 correctly (+${pointsEarned} pts).`, 'success');
         }
 
         function renderLeaderboard() {
@@ -2040,7 +2112,7 @@
                             <input type="text" value="${s.speaker}" onchange="updateSessionField(${idx}, 'speaker', this.value)" class="w-full px-3 py-1.5 border rounded-xl bg-white">
                         </div>
 
-                        <!-- Option 1: Base64 Direct File Uploader -->
+                        <!-- Passport Photo Input -->
                         <div class="sm:col-span-2 lg:col-span-3 space-y-1">
                             <label class="block font-semibold text-slate-600 mb-1 flex items-center justify-between">
                                 <span><i class="fa-solid fa-image-portrait text-jce-blue mr-1"></i> Passport Photo (Direct File Upload)</span>
@@ -2055,11 +2127,20 @@
                             </div>
                         </div>
 
+                        <!-- Online Course URL Feature -->
+                        <div class="sm:col-span-2 lg:col-span-3 space-y-1">
+                            <label class="block font-semibold text-slate-600 mb-1 flex items-center justify-between">
+                                <span><i class="fa-solid fa-graduation-cap text-teal-600 mr-1"></i> Online Course / Virtual Lab URL</span>
+                                <span class="text-[10px] text-teal-700 font-bold">Student Link</span>
+                            </label>
+                            <input type="text" value="${s.courseUrl || ''}" onchange="updateSessionField(${idx}, 'courseUrl', this.value)" class="w-full px-3 py-1.5 border rounded-xl bg-white text-xs" placeholder="https://vlab.amrita.edu/ or course link">
+                        </div>
+
                         <div class="sm:col-span-2 lg:col-span-3">
                             <label class="block font-semibold text-slate-600 mb-1">Google Meet Link</label>
                             <input type="text" value="${s.meetLink}" onchange="updateSessionField(${idx}, 'meetLink', this.value)" class="w-full px-3 py-1.5 border rounded-xl bg-white">
                         </div>
-                        <div class="sm:col-span-3 lg:col-span-3">
+                        <div class="sm:col-span-2 lg:col-span-3">
                             <label class="block font-semibold text-slate-600 mb-1">Recording URL</label>
                             <input type="text" value="${s.videoLink || ''}" onchange="updateSessionField(${idx}, 'videoLink', this.value)" class="w-full px-3 py-1.5 border rounded-xl bg-white" placeholder="https://...">
                         </div>
@@ -2144,6 +2225,7 @@
                 topic: 'New Special Workshop',
                 speaker: 'Guest Resource Person',
                 photoUrl: '',
+                courseUrl: '',
                 description: 'Additional interactive session added by coordinator.',
                 meetLink: 'https://meet.google.com/abc-defg-hij',
                 videoLink: ''
@@ -2161,11 +2243,14 @@
             showNotification('Schedule reset to original defaults.', 'info');
         }
 
+        // CLEAR CLOUD DATABASE LEADERBOARD
         function clearAllLeaderboardData() {
-            leaderboard = [];
-            localStorage.removeItem('jce_leaderboard_2026');
-            renderLeaderboard();
-            showNotification('Leaderboard submissions cleared.', 'info');
+            db.ref('leaderboard').remove()
+                .then(() => {
+                    leaderboard = [];
+                    renderLeaderboard();
+                    showNotification('Live cloud leaderboard wiped successfully.', 'info');
+                });
         }
 
         function saveAdminSessions() {
